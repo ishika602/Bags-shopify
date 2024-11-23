@@ -1,0 +1,283 @@
+ <div class="verify-popup-overlay"></div>
+    <div class="verify-popup popup-varify">
+      <div class="verify-popup-inner">
+        <div class="verify-popup__header">
+          Complete Your Setup
+          <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="close">
+            <path d="M1.5 1L12.5 12" stroke="#8A8A8A" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12.5 1L1.5 12" stroke="#8A8A8A" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+       <div class="verify-popup__text sm">
+           Action needed - AutoDS is not set up.
+
+        </div>
+                <div class="verify-popup__footer"><a href="#" class="btn-white cancel">Cancel</a>  <a target="_blank" href="https://platform.autods.com/register?utm_source=shopify&utm_medium=bys_theme" class="btn-black">Register now</a></div>
+       
+      </div>
+    </div>
+
+
+
+    <div class="verify-popup popup-confirmation">
+      <div class="verify-popup-inner">
+        <div class="verify-popup__header">
+          Complete Your Setup
+          <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="close">
+            <path d="M1.5 1L12.5 12" stroke="#8A8A8A" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12.5 1L1.5 12" stroke="#8A8A8A" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="verify-popup__text">
+            Without registering with AutoDS, you won't be able to fulfill orders or manage products efficiently. Are you sure you want to proceed without this essential setup?
+        </div>
+
+         <div class="verify-popup__footer"><a href="#" class="btn-white proceed_anyway" >Proceed Anyway</a>  <a target="_blank" href="https://platform.autods.com/register?utm_source=shopify&utm_medium=bys_theme" class="btn-black">Register now</a></div>
+       
+      </div>
+    </div>
+
+                
+
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+                
+
+    <style>
+
+      .verify-popup-overlay{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.7;
+        z-index: 98;
+        display: block !important;
+        transition: 0.2s linear;
+
+        opacity: 0;
+        visibility: hidden;
+      }
+
+
+      .verify-popup__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        min-height: 175px;
+      }
+
+      .verify-popup__content h2{
+        text-align: center;
+        color: #303030;
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 140%; /* 25.2px */
+        margin: 0px;
+      }
+
+      .verify-popup__content span{
+color: #303030;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+      }
+
+      .verify-popup__footer{
+        border-top: 1px solid #E3E3E3;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .btn-white{
+        color: #303030;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+        padding: 6px 12px;
+
+        border-radius: var(--radius-radius-8, 8px);
+border: 1px solid #E5E5E5;
+background: #FFF;
+        text-decoration: none;
+      }
+
+      .close{
+  cursor: pointer;
+      }
+
+
+      .verify-popup__text.sm{
+        padding-top: 12px;
+        padding-bottom: 24px;
+      }
+
+      .btn-black{
+          color: #FFF;
+          font-family: Inter;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          padding: 6px 12px;
+          border-radius: var(--radius-radius-8, 8px);
+          border: 1px solid #303030;
+          background: linear-gradient(180deg, #303030 0%, #484848 100%);
+          box-shadow: 0px 1px 0px 0px #101010, 0px 2px 0px 0px #636363 inset;
+         text-decoration: none;
+      }
+
+      .verify-popup__header{
+        color: #303030;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #E3E3E3;
+        background: #F3F3F3;
+        padding: 16px;
+        border-radius: 12px 12px 0px 0px;
+      }
+      
+     
+
+      .verify-popup{
+            border-radius: 12px;
+            background: #FFF;
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.20);
+            max-width: 430px;
+            width: calc(100% - 32px);
+            position: fixed;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s linear;
+      }
+
+
+
+       .verify-popup.verify-visible{
+        opacity: 1;
+        visibility: visible;
+      }
+
+
+      .verify-popup-overlay.verify-visible{
+        opacity: 0.7;
+        visibility: visible;
+      }
+
+
+      .verify-popup__text{
+        padding: 24px 16px;
+        color: #303030;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+      }
+
+
+      .proceed_anyway{
+        transition: 0.2s linear;
+      }
+
+      .proceed_anyway:hover{
+        color: #FFF;
+background-color: #E51C01;
+      }
+      
+      
+    </style>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+
+          if (!localStorage.getItem('popup_verification')) {
+           
+          if (window.Shopify && window.Shopify.designMode) {
+            
+              const shopName = Shopify.shop; 
+              const apiUrl = `https://platform-api.autods.com/sales_channels/shopify/check-store/?shop=${shopName}`;
+              fetch(apiUrl)
+                  .then(response => {
+                    
+                      if (!response.ok) {
+                           setTimeout(function() {
+                              document.querySelector('.verify-popup.popup-varify').classList.add('verify-visible');
+                              document.querySelector('.verify-popup-overlay').classList.add('verify-visible');
+                          }, 4000);
+                      } 
+                  })
+                  .catch(error => {
+                      setTimeout(function() {
+                          document.querySelector('.verify-popup.popup-varify').classList.add('verify-visible');
+                          document.querySelector('.verify-popup-overlay').classList.add('verify-visible');
+                      }, 4000);
+                  });
+          }
+
+          }
+            
+      });
+
+      document.querySelectorAll(".verify-popup a.btn-black").forEach(item => {
+          item.addEventListener("click", function(e){
+            e.preventDefault();
+            window.open("https://platform.autods.com/register?utm_source=shopify&utm_medium=bys_theme", '_blank')
+            this.closest('.verify-popup').classList.remove('verify-visible');
+            document.querySelector('.verify-popup-overlay').classList.remove('verify-visible');
+        })
+      })
+
+
+       document.querySelectorAll(".verify-popup .close").forEach(item => {
+        item.addEventListener("click", function(e){
+          e.preventDefault();
+          this.closest('.verify-popup').classList.remove('verify-visible');
+          document.querySelector('.verify-popup-overlay').classList.remove('verify-visible');
+        })
+       })
+      
+       document.querySelector(".verify-popup .cancel").addEventListener("click", function(e){
+          e.preventDefault();
+           document.querySelector('.popup-varify').classList.remove('verify-visible');
+          document.querySelector('.popup-confirmation').classList.add('verify-visible')
+      })
+
+       document.querySelector(".verify-popup .proceed_anyway").addEventListener("click", function(e){
+          e.preventDefault();
+           this.closest('.verify-popup').classList.remove('verify-visible');
+          document.querySelector('.verify-popup-overlay').classList.remove('verify-visible');
+          localStorage.setItem('popup_verification', 'true');
+      })
+
+      
+
+    </script>
